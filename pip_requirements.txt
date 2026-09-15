@@ -1,0 +1,46 @@
+# pip_requirements.txt — Full local AI stack for ai-powered-video-analyzer v1.0
+#
+# Recommended install (detection only):
+#   pip install -e ".[vision]"
+#
+# Full install (all pipeline components):
+#   pip install -r pip_requirements.txt
+#
+# Minimal install (no detection models):
+#   pip install -e .
+
+# Core (always installed)
+numpy>=1.24,<3.0
+Pillow>=10.0
+opencv-python-headless>=4.8
+
+# Object detection — VisionServeX (primary backend)
+visionservex>=3.11.0
+
+# Speech transcription
+openai-whisper>=20231117
+
+# Image captioning
+transformers>=4.35
+accelerate>=0.24
+
+# PyTorch (install GPU version from https://pytorch.org for CUDA support)
+torch>=2.0
+torchvision>=0.15
+torchaudio>=2.0
+
+# Audio processing and events
+librosa>=0.10
+soundfile>=0.12
+panns-inference>=0.1
+
+# Video I/O
+moviepy>=1.0,<2.0
+
+# LLM summarization (Ollama Python client)
+ollama>=0.3
+
+# Development
+pytest>=7.0
+pytest-cov>=4.0
+ruff>=0.4
